@@ -15,11 +15,11 @@ def sendMail(reciever_address, resource_name) :
 
 		msg['From'] = fromaddr
 		msg['To'] = toaddr
-		msg['Subject'] = "Resume Generated Through Resume Builder"
+		msg['Subject'] = "Here is your Resume!"
 
-		body = "Below is the attach file of your Resume. Hope we will meet again"
+		body = "Thank you for using GSResumeBuilder service, we've successfully generated your Resume in the format prescribed by our institute. In case of any queries please feel free to reply to this mail.<br>Please find your resume attached along with this mail.<br><br>Regards<br>Team <a href='https://github.com/GSResumeBuilder'>GSResumeBuilder</a>"
 
-		msg.attach(MIMEText(body, 'plain'))
+		msg.attach(MIMEText(body, 'html'))
 		filename = os.path.basename("./"+resource_name)
 		attachment = open(filename, "rb")
 
